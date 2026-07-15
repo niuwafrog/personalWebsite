@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steve Mao ★ 个人作品集</title>
+  <meta name="description" content="Steve Mao 的个人作品集网站 - 全栈开发者 / 设计师" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="alternate icon" href="assets/icons/favicon.ico" />
+
+  <!-- Fonts - Y2K era web fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ====== CRT SCANLINE OVERLAY ====== -->
+  <div class="crt-overlay"></div>
+
+  <!-- ====== DESKTOP / PAGE WRAPPER ====== -->
+  <div class="desktop">
+
+    <!-- ====== DESKTOP ICONS ====== -->
+    <div class="desktop-icons">
+      <div class="desk-icon" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <div class="desk-icon-img"><i class="fas fa-user"></i></div>
+        <span class="desk-icon-label">About Me</span>
+      </div>
+      <div class="desk-icon" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+        <div class="desk-icon-img"><i class="fas fa-folder-open"></i></div>
+        <span class="desk-icon-label">Projects</span>
+      </div>
+      <div class="desk-icon" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <div class="desk-icon-img"><i class="fas fa-envelope"></i></div>
+        <span class="desk-icon-label">Contact</span>
+      </div>
+      <div class="desk-icon" onclick="window.open('https://github.com/SteveMaoMa','_blank')">
+        <div class="desk-icon-img"><i class="fab fa-github"></i></div>
+        <span class="desk-icon-label">GitHub</span>
+      </div>
+    </div>
+
+    <!-- ====== WINDOW: HERO / INTRO ====== -->
+    <div class="window window-hero" id="home">
+      <div class="window-titlebar">
+        <div class="titlebar-text">
+          <i class="fas fa-terminal titlebar-icon"></i>
+          <span>portfolio.exe</span>
+        </div>
+        <div class="titlebar-btns">
+          <button class="titlebar-btn btn-minimize" onclick="this.closest('.window').classList.toggle('minimized')">_</button>
+          <button class="titlebar-btn btn-maximize" onclick="this.closest('.window').classList.toggle('maximized')">□</button>
+          <button class="titlebar-btn btn-close" onclick="this.closest('.window').style.display='none'">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="hero-layout">
+          <div class="hero-main">
+            <!-- Y2K VISITOR COUNTER -->
+            <div class="visitor-counter">
+              <span class="counter-label">You are visitor #</span>
+              <span class="counter-digits" id="visitorCounter">0042</span>
+              <span class="counter-blink">✦</span>
+            </div>
+
+            <div class="hero-badge">
+              <span class="blink-text">● ONLINE</span>
+              <span class="badge-sep">|</span>
+              <span>Full-Stack Developer &amp; Designer</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="chrome-text">Steve Mao</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              <span class="typewriter" id="typewriter"></span>
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="win-btn win-btn-primary">
+                <i class="fas fa-folder-open"></i> View Work
+              </a>
+              <a href="#contact" class="win-btn win-btn-default">
+                <i class="fas fa-envelope"></i> Hire Me
+              </a>
+            </div>
+
+            <!-- Y2K Marquee -->
+            <div class="y2k-marquee">
+              <div class="marquee-content">
+                <span>✦ WELCOME TO MY CYBERSPACE ✦ HTML5 ✦ CSS3 ✦ JAVASCRIPT ✦ REACT ✦ NODE.JS ✦ PYTHON ✦</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="winamp-player">
+              <div class="winamp-title">WINAMP 2.81</div>
+              <div class="winamp-display">
+                <div class="winamp-text" id="winampText">NOW PLAYING: INTRO.WAV</div>
+                <div class="winamp-visualizer">
+                  <div class="vis-bar" style="height:60%"></div>
+                  <div class="vis-bar" style="height:40%"></div>
+                  <div class="vis-bar" style="height:80%"></div>
+                  <div class="vis-bar" style="height:30%"></div>
+                  <div class="vis-bar" style="height:90%"></div>
+                  <div class="vis-bar" style="height:50%"></div>
+                  <div class="vis-bar" style="height:70%"></div>
+                  <div class="vis-bar" style="height:45%"></div>
+                  <div class="vis-bar" style="height:85%"></div>
+                  <div class="vis-bar" style="height:35%"></div>
+                </div>
+              </div>
+              <div class="winamp-controls">
+                <button class="wa-btn">⏮</button>
+                <button class="wa-btn wa-play">▶</button>
+                <button class="wa-btn">⏭</button>
+                <div class="wa-volume">
+                  <div class="wa-volume-track">
+                    <div class="wa-volume-fill" style="width:70%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-quote">
+              <i class="fas fa-quote-left"></i>
+              <span>Building the future, one pixel at a time.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== WINDOW: ABOUT ME ====== -->
+    <div class="window" id="about">
+      <div class="window-titlebar">
+        <div class="titlebar-text">
+          <i class="fas fa-address-card titlebar-icon"></i>
+          <span>About Me</span>
+        </div>
+        <div class="titlebar-btns">
+          <button class="titlebar-btn btn-minimize">_</button>
+          <button class="titlebar-btn btn-maximize">□</button>
+          <button class="titlebar-btn btn-close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="about-layout">
+          <!-- Left column: Photo + stats -->
+          <div class="about-left">
+            <div class="about-photo-frame">
+              <div class="about-photo">
+                <i class="fas fa-user-astronaut"></i>
+              </div>
+              <div class="photo-glare"></div>
+            </div>
+
+            <!-- Loading bar gag -->
+            <div class="about-loading">
+              <div class="loading-label">LOADING PERSONALITY...</div>
+              <div class="loading-bar-track">
+                <div class="loading-bar-fill" id="personalityBar" style="width:0%"></div>
+              </div>
+              <div class="loading-pct" id="personalityPct">0%</div>
+            </div>
+
+            <div class="win-stats">
+              <div class="win-stat">
+                <span class="win-stat-num" data-count="3">0</span><span class="win-stat-plus">+</span>
+                <span class="win-stat-label">Years Exp</span>
+              </div>
+              <div class="win-stat">
+                <span class="win-stat-num" data-count="20">0</span><span class="win-stat-plus">+</span>
+                <span class="win-stat-label">Projects</span>
+              </div>
+              <div class="win-stat">
+                <span class="win-stat-num" data-count="10">0</span><span class="win-stat-plus">+</span>
+                <span class="win-stat-label">Clients</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column: Bio -->
+          <div class="about-right">
+            <div class="sysinfo">
+              <div class="sysinfo-row"><span class="sysinfo-key">NAME</span><span class="sysinfo-val">Steve Mao</span></div>
+              <div class="sysinfo-row"><span class="sysinfo-key">ROLE</span><span class="sysinfo-val">Full-Stack Developer</span></div>
+              <div class="sysinfo-row"><span class="sysinfo-key">LOCATION</span><span class="sysinfo-val">Shanghai, China</span></div>
+              <div class="sysinfo-row"><span class="sysinfo-key">STATUS</span><span class="sysinfo-val status-open">AVAILABLE FOR HIRE</span></div>
+              <div class="sysinfo-row"><span class="sysinfo-key">CONTACT</span><span class="sysinfo-val">contact@stevemao.dev</span></div>
+            </div>
+
+            <div class="about-divider">
+              <span>▼ SYSTEM LOG ▼</span>
+            </div>
+
+            <div class="about-bio">
+              <p><span class="boot-msg">[BOOT] Initializing developer module...</span></p>
+              <p><span class="boot-msg">[OK]   Core skills loaded: React, Node.js, Python</span></p>
+              <p><span class="boot-msg">[OK]   Design engine online: UI/UX, Figma, Prototyping</span></p>
+              <p class="bio-text">
+                I'm a passionate developer who loves building high-quality web apps.
+                From frontend interactions to backend architecture, I enjoy turning
+                complex problems into elegant solutions.
+              </p>
+              <p class="bio-text">
+                With a CS degree and years of hands-on experience, I specialize in
+                modern stacks like React, Node.js, and Python — and I'm constantly
+                exploring AI and cloud computing.
+              </p>
+            </div>
+
+            <div class="about-actions">
+              <a href="#" class="win-btn win-btn-primary" onclick="alert('CV download started! (placeholder)')">
+                <i class="fas fa-download"></i> Download CV
+              </a>
+            </div>
+
+            <!-- Under Construction badge -->
+            <div class="under-construction">
+              <i class="fas fa-triangle-exclamation"></i>
+              <span>This site is always under construction!</span>
+              <i class="fas fa-triangle-exclamation"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== WINDOW: SKILLS ====== -->
+    <div class="window" id="skills">
+      <div class="window-titlebar">
+        <div class="titlebar-text">
+          <i class="fas fa-microchip titlebar-icon"></i>
+          <span>Skills &amp; Expertise</span>
+        </div>
+        <div class="titlebar-btns">
+          <button class="titlebar-btn btn-minimize">_</button>
+          <button class="titlebar-btn btn-maximize">□</button>
+          <button class="titlebar-btn btn-close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="skills-grid">
+          <!-- Frontend -->
+          <div class="skill-panel">
+            <div class="skill-panel-header">
+              <i class="fas fa-paint-brush"></i>
+              <h3>FRONTEND</h3>
+            </div>
+            <div class="skill-panel-body">
+              <div class="skill-row" data-pct="90"><span>HTML5 / CSS3</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="85"><span>JavaScript / TS</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="80"><span>React / Next.js</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="75"><span>Vue.js</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-panel">
+            <div class="skill-panel-header">
+              <i class="fas fa-server"></i>
+              <h3>BACKEND</h3>
+            </div>
+            <div class="skill-panel-body">
+              <div class="skill-row" data-pct="85"><span>Node.js / Express</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="75"><span>Python / Django</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="70"><span>Java / Spring Boot</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="80"><span>GraphQL / REST</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+            </div>
+          </div>
+
+          <!-- DevOps -->
+          <div class="skill-panel">
+            <div class="skill-panel-header">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <h3>DEVOPS &amp; CLOUD</h3>
+            </div>
+            <div class="skill-panel-body">
+              <div class="skill-row" data-pct="80"><span>Docker / K8s</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="75"><span>AWS / GCP</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="70"><span>CI/CD (GitHub Actions)</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="65"><span>Terraform</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-panel">
+            <div class="skill-panel-header">
+              <i class="fas fa-tools"></i>
+              <h3>TOOLS &amp; OTHER</h3>
+            </div>
+            <div class="skill-panel-body">
+              <div class="skill-row" data-pct="90"><span>Git / GitHub</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="85"><span>Figma</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="75"><span>Linux / Shell</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+              <div class="skill-row" data-pct="70"><span>SQL / MongoDB</span><div class="skill-track"><div class="skill-fill"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== WINDOW: PROJECTS ====== -->
+    <div class="window" id="projects">
+      <div class="window-titlebar">
+        <div class="titlebar-text">
+          <i class="fas fa-folder-open titlebar-icon"></i>
+          <span>Projects — My Portfolio</span>
+        </div>
+        <div class="titlebar-btns">
+          <button class="titlebar-btn btn-minimize">_</button>
+          <button class="titlebar-btn btn-maximize">□</button>
+          <button class="titlebar-btn btn-close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <!-- Filter bar (Win95/2000 style tabs) -->
+        <div class="project-toolbar">
+          <div class="project-tabs">
+            <button class="proj-tab active" data-filter="all">All</button>
+            <button class="proj-tab" data-filter="frontend">Frontend</button>
+            <button class="proj-tab" data-filter="fullstack">Full Stack</button>
+            <button class="proj-tab" data-filter="ai">AI</button>
+          </div>
+          <div class="proj-view-options">
+            <span>View:</span>
+            <button class="view-btn active" data-view="grid"><i class="fas fa-th"></i></button>
+            <button class="view-btn" data-view="list"><i class="fas fa-list"></i></button>
+          </div>
+        </div>
+
+        <div class="proj-container grid-view" id="projContainer">
+          <!-- Project 1 -->
+          <div class="proj-card" data-category="fullstack">
+            <div class="proj-thumb" style="background:linear-gradient(135deg,#667eea,#764ba2)">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-tag">FULL STACK</span>
+              <h4>E-Commerce Platform</h4>
+              <p>Full-featured e-commerce with cart, payments & order tracking.</p>
+              <div class="proj-techs">
+                <span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="proj-card" data-category="ai">
+            <div class="proj-thumb" style="background:linear-gradient(135deg,#f093fb,#f5576c)">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-tag tag-ai">AI</span>
+              <h4>AI Chat Assistant</h4>
+              <p>LLM-powered chatbot with context memory and multi-turn dialogue.</p>
+              <div class="proj-techs">
+                <span>Python</span><span>FastAPI</span><span>OpenAI</span><span>React</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="proj-card" data-category="frontend">
+            <div class="proj-thumb" style="background:linear-gradient(135deg,#4facfe,#00f2fe)">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-tag tag-frontend">FRONTEND</span>
+              <h4>Data Dashboard</h4>
+              <p>Interactive dashboard with real-time charts and custom config.</p>
+              <div class="proj-techs">
+                <span>Vue.js</span><span>D3.js</span><span>TypeScript</span><span>Tailwind</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="proj-card" data-category="fullstack">
+            <div class="proj-thumb" style="background:linear-gradient(135deg,#43e97b,#38f9d7)">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-tag">FULL STACK</span>
+              <h4>Project Management</h4>
+              <p>Team collaboration tool with kanban boards and real-time sync.</p>
+              <div class="proj-techs">
+                <span>Next.js</span><span>Prisma</span><span>PostgreSQL</span><span>WebSocket</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="proj-card" data-category="ai">
+            <div class="proj-thumb" style="background:linear-gradient(135deg,#a18cd1,#fbc2eb)">
+              <i class="fas fa-image"></i>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-tag tag-ai">AI</span>
+              <h4>AI Image Generator</h4>
+              <p>Stable Diffusion powered image generation with text-to-image.</p>
+              <div class="proj-techs">
+                <span>Next.js</span><span>Python</span><span>Stable Diffusion</span><span>AWS</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="proj-card" data-category="frontend">
+            <div class="proj-thumb" style="background:linear-gradient(135deg,#fa709a,#fee140)">
+              <i class="fas fa-music"></i>
+            </div>
+            <div class="proj-meta">
+              <span class="proj-tag tag-frontend">FRONTEND</span>
+              <h4>Music Player</h4>
+              <p>Minimalist web music player with local playback & playlists.</p>
+              <div class="proj-techs">
+                <span>React</span><span>Zustand</span><span>CSS Animations</span><span>Web Audio</span>
+              </div>
+              <div class="proj-links">
+                <a href="#" class="proj-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="proj-link"><i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-footer">
+          <a href="https://github.com/SteveMaoMa" target="_blank" class="win-btn win-btn-default">
+            <i class="fab fa-github"></i> See More on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== WINDOW: EXPERIENCE ====== -->
+    <div class="window" id="experience">
+      <div class="window-titlebar">
+        <div class="titlebar-text">
+          <i class="fas fa-briefcase titlebar-icon"></i>
+          <span>Experience &amp; Education</span>
+        </div>
+        <div class="titlebar-btns">
+          <button class="titlebar-btn btn-minimize">_</button>
+          <button class="titlebar-btn btn-maximize">□</button>
+          <button class="titlebar-btn btn-close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <!-- Tab control -->
+        <div class="exp-tabstrip">
+          <button class="exp-tab active" data-tab="work">Work</button>
+          <button class="exp-tab" data-tab="education">Education</button>
+        </div>
+
+        <!-- Work Timeline -->
+        <div class="exp-panel active" id="expWork">
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2024 – Present</div>
+              <div class="tl-card">
+                <h4>Senior Full-Stack Developer</h4>
+                <h5>Tech Company · Shanghai</h5>
+                <p>Architected core product frontend &amp; backend. Led microservice migration.</p>
+                <div class="tl-tags"><span>React</span><span>Node.js</span><span>Kubernetes</span></div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2022 – 2024</div>
+              <div class="tl-card">
+                <h4>Frontend Engineer</h4>
+                <h5>Startup Inc. · Shanghai</h5>
+                <p>Built SaaS product from scratch. Owned component library and performance.</p>
+                <div class="tl-tags"><span>Vue.js</span><span>TypeScript</span><span>Webpack</span></div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2021 – 2022</div>
+              <div class="tl-card">
+                <h4>Junior Developer (Intern)</h4>
+                <h5>Digital Agency · Shanghai</h5>
+                <p>Worked on client projects. Gained real-world experience in agile teams.</p>
+                <div class="tl-tags"><span>HTML/CSS</span><span>JavaScript</span><span>WordPress</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Timeline -->
+        <div class="exp-panel" id="expEducation">
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2017 – 2021</div>
+              <div class="tl-card">
+                <h4>B.S. Computer Science</h4>
+                <h5>Shanghai Jiao Tong University</h5>
+                <p>GPA 3.8/4.0. Dean's list, outstanding graduate.</p>
+                <div class="tl-tags"><span>Data Structures</span><span>Algorithms</span><span>OS</span></div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2020 – 2021</div>
+              <div class="tl-card">
+                <h4>Exchange Student</h4>
+                <h5>UC Berkeley</h5>
+                <p>Semester exchange. Studied AI and Distributed Systems.</p>
+                <div class="tl-tags"><span>ML</span><span>Distributed Systems</span></div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-date">2019</div>
+              <div class="tl-card">
+                <h4>Full-Stack Web Dev Nanodegree</h4>
+                <h5>Udacity</h5>
+                <p>Completed full-stack program covering Flask, React, PostgreSQL.</p>
+                <div class="tl-tags"><span>Flask</span><span>React</span><span>PostgreSQL</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== WINDOW: CONTACT ====== -->
+    <div class="window" id="contact">
+      <div class="window-titlebar">
+        <div class="titlebar-text">
+          <i class="fas fa-envelope titlebar-icon"></i>
+          <span>Contact Me</span>
+        </div>
+        <div class="titlebar-btns">
+          <button class="titlebar-btn btn-minimize">_</button>
+          <button class="titlebar-btn btn-maximize">□</button>
+          <button class="titlebar-btn btn-close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="contact-layout">
+          <div class="contact-info-panel">
+            <h3>Let's create something awesome!</h3>
+            <p>Whether it's collaboration, tech talk, or job opportunities — I'd love to hear from you.</p>
+
+            <div class="contact-list">
+              <div class="c-item">
+                <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                <div><span class="c-label">Email</span><a href="mailto:contact@stevemao.dev">contact@stevemao.dev</a></div>
+              </div>
+              <div class="c-item">
+                <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div><span class="c-label">Location</span><span>Shanghai, China</span></div>
+              </div>
+              <div class="c-item">
+                <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+                <div><span class="c-label">Phone</span><a href="tel:+861234567890">+86 123-4567-890</a></div>
+              </div>
+            </div>
+
+            <div class="contact-social-strip">
+              <a href="https://github.com/SteveMaoMa" target="_blank" class="social-badge"><i class="fab fa-github"></i></a>
+              <a href="#" target="_blank" class="social-badge"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" target="_blank" class="social-badge"><i class="fab fa-twitter"></i></a>
+              <a href="#" target="_blank" class="social-badge"><i class="fab fa-weixin"></i></a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-field">
+              <input type="text" id="fName" placeholder="Your Name" required />
+              <label for="fName">Your Name</label>
+            </div>
+            <div class="form-field">
+              <input type="email" id="fEmail" placeholder="Your Email" required />
+              <label for="fEmail">Your Email</label>
+            </div>
+            <div class="form-field">
+              <input type="text" id="fSubject" placeholder="Subject" />
+              <label for="fSubject">Subject</label>
+            </div>
+            <div class="form-field">
+              <textarea id="fMessage" rows="4" placeholder="Message" required></textarea>
+              <label for="fMessage">Message</label>
+            </div>
+            <button type="submit" class="win-btn win-btn-primary btn-block">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-status" id="formStatus"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== FOOTER WINDOW ====== -->
+    <div class="window window-footer">
+      <div class="window-titlebar">
+        <div class="titlebar-text">
+          <i class="fas fa-info-circle titlebar-icon"></i>
+          <span>About This Site</span>
+        </div>
+        <div class="titlebar-btns">
+          <button class="titlebar-btn btn-minimize">_</button>
+          <button class="titlebar-btn btn-maximize">□</button>
+          <button class="titlebar-btn btn-close">✕</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div class="footer-content">
+          <div class="footer-badge-row">
+            <span class="made-badge"><i class="fab fa-html5"></i> HTML5</span>
+            <span class="made-badge"><i class="fab fa-css3-alt"></i> CSS3</span>
+            <span class="made-badge"><i class="fab fa-js"></i> Vanilla JS</span>
+            <span class="made-badge"><i class="fas fa-heart" style="color:#ff0000"></i> Y2K Love</span>
+          </div>
+          <div class="footer-copy">
+            <p>© 2026 Steve Mao. All rights reserved.</p>
+            <p>Best viewed in Internet Explorer 5.0+ at 800×600</p>
+            <p class="footer-rainbow">✦ MADE WITH PURE CSS &amp; 90s NOSTALGIA ✦</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.desktop -->
+
+  <!-- ====== TASKBAR (WIN2000 STYLE) ====== -->
+  <div class="taskbar" id="taskbar">
+    <!-- Start Button -->
+    <div class="start-btn" id="startBtn">
+      <i class="fab fa-windows"></i>
+      <span>Start</span>
+    </div>
+
+    <!-- Quick Launch -->
+    <div class="quicklaunch">
+      <button onclick="window.open('https://github.com/SteveMaoMa','_blank')" title="GitHub"><i class="fab fa-github"></i></button>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" title="Email"><i class="fas fa-envelope"></i></button>
+    </div>
+
+    <!-- Taskbar Divider -->
+    <div class="tb-divider"></div>
+
+    <!-- Running tasks (section indicators) -->
+    <div class="taskbar-items">
+      <button class="tb-item active" onclick="document.getElementById('home').scrollIntoView({behavior:'smooth'})">
+        <i class="fas fa-terminal"></i> portfolio
+      </button>
+      <button class="tb-item" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        <i class="fas fa-user"></i> about
+      </button>
+      <button class="tb-item" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+        <i class="fas fa-folder"></i> projects
+      </button>
+    </div>
+
+    <!-- System Tray -->
+    <div class="tray">
+      <div class="tray-icon"><i class="fas fa-volume-up"></i></div>
+      <div class="tray-icon" id="trayClock">
+        <span id="clockDisplay">12:00 PM</span>
+      </div>
+    </div>
+
+    <!-- Start Menu (hidden by default) -->
+    <div class="start-menu" id="startMenu">
+      <div class="start-sidebar">
+        <span class="start-sidebar-text">Windows<span class="blink-text">_</span></span>
+      </div>
+      <div class="start-body">
+        <div class="start-user">
+          <i class="fas fa-user-circle"></i>
+          <span>Steve Mao</span>
+        </div>
+        <div class="start-divider"></div>
+        <a class="start-item" href="#home"><i class="fas fa-terminal"></i> portfolio.exe</a>
+        <a class="start-item" href="#about"><i class="fas fa-address-card"></i> About Me</a>
+        <a class="start-item" href="#projects"><i class="fas fa-folder-open"></i> My Projects</a>
+        <a class="start-item" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+        <div class="start-divider"></div>
+        <a class="start-item" href="https://github.com/SteveMaoMa" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <div class="start-divider"></div>
+        <a class="start-item" href="#" onclick="alert('Shutting down... just kidding! This is a website 😄')">
+          <i class="fas fa-power-off"></i> Shut Down...
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== MUSIC PLAYER FLOATING (WINAMP VIBE) ====== -->
+  <div class="floating-nowplaying" id="nowPlaying">
+    <div class="np-grip"></div>
+    <div class="np-content">
+      <i class="fas fa-music"></i>
+      <span id="npText">Now Playing: Intro.wav</span>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
